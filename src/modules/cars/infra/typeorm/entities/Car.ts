@@ -37,7 +37,7 @@ class Car {
   brand: string;
 
   @ManyToOne(() => Category)
-  @JoinColumn({ name: "Category_id" })
+  @JoinColumn({ name: "category_id" })
   category: Category;
 
   @Column()
@@ -50,7 +50,6 @@ class Car {
     if (!this.id) {
       this.id = uuidV4();
       this.available = true;
-      this.created_at = new Date();
     }
   }
 }
