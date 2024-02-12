@@ -2,7 +2,7 @@ import { RentalsRepositoryInMemory } from "@modules/rentals/repositories/in-memo
 import { DaysJsDateProvider } from "@shared/container/providers/DateProvider/implementations/DaysJsDateProvider";
 import { AppError } from "@shared/errors/AppError";
 
-import { CreateRentalUseCase } from "./createRentalUseCase";
+import { CreateRentalUseCase } from "./CreateRentalUseCase";
 
 let daysJsDateProvider: DaysJsDateProvider;
 let rentalsRepositoryInMemory: RentalsRepositoryInMemory;
