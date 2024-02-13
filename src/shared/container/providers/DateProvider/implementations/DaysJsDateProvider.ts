@@ -19,6 +19,6 @@ export class DaysJsDateProvider implements IDateProvider {
   }
 
   dayAdd24(): Date {
-    return dayjs().add(1, "day").toDate();
+    return dayjs().add(2, "day").toDate();
   }
 }

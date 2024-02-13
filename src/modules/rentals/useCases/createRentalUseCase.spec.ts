@@ -8,9 +8,9 @@ let daysJsDateProvider: DaysJsDateProvider;
 let rentalsRepositoryInMemory: RentalsRepositoryInMemory;
 let createRentalUseCase: CreateRentalUseCase;
 
-describe("Create Rental", () => {
-  const dayAdd24 = daysJsDateProvider.dayAdd24();
+let dayAdd24: Date;
 
+describe("Create Rental", () => {
   beforeEach(() => {
     rentalsRepositoryInMemory = new RentalsRepositoryInMemory();
     daysJsDateProvider = new DaysJsDateProvider();
@@ -18,6 +18,7 @@ describe("Create Rental", () => {
       rentalsRepositoryInMemory,
       daysJsDateProvider,
     );
+    dayAdd24 = daysJsDateProvider.dayAdd24();
   });
 
   it("Should be able to create a new rental", async () => {
