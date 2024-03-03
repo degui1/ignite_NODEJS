@@ -7,7 +7,10 @@ dayjs.extend(utc);
 
 export class DaysJsDateProvider implements IDateProvider {
   compareInHours(start_date: Date, end_date: Date): number {
-    return dayjs(end_date).diff(start_date, "hours");
+    const end_date_utc = this.convertToUTC(end_date);
+    const start_date_utc = this.convertToUTC(start_date);
+
+    return dayjs(end_date_utc).diff(start_date_utc, "hours");
   }
 
   convertToUTC(date: Date): string {
@@ -20,5 +23,12 @@ export class DaysJsDateProvider implements IDateProvider {
 
   dayAdd24(): Date {
     return dayjs().add(2, "day").toDate();
+  }
+
+  compareInDays(start_date: Date, end_date: Date): number {
+    const end_date_utc = this.convertToUTC(end_date);
+    const start_date_utc = this.convertToUTC(start_date);
+
+    return dayjs(end_date_utc).diff(start_date_utc, "days");
   }
 }
